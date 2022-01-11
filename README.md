@@ -12,7 +12,7 @@
 - php, mysql
 - code structured using mvc pattern 
 - requests from frontend are routed in controller to make queries in DB and respond with JSON output 
-- user data for cart simulation functionality is stored as $_SESSION variable for this demo 
+- Session satate is used to preserve data between http requests while user browsers the app  
 
 ###DEMO deployed at [Web-Shop-App](https://webstorebackend.000webhostapp.com/#) 
 
