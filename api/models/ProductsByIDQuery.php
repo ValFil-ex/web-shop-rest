@@ -11,7 +11,7 @@ class ProductsByIDQuery
     public function __construct($typeID){
         $this->typeID = array($typeID);
         $this->js = new JsonView();
-        $this->database = new ProductsDatabase();
+        $this->database = new pdoDBGateway();
         //$this->sqlStatement = "SELECT t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = ?";
         $this->sqlStatement = "SELECT t.name AS productTypeName, p.name AS productName, p.id AS pid, p.base_unit AS baseUnit, p.price_of_sale AS productPrice, p.description AS productDescription FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = ?";
     }

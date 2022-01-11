@@ -7,7 +7,7 @@ class ProductTypesQuery
     private $sqlStatement;
 
     public function __construct(){
-        $this->database = new ProductsDatabase();
+        $this->database = new pdoDBGateway();
         $this->sqlStatement = "SELECT id, name FROM product_types ORDER BY name;";
     }
 

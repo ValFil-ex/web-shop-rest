@@ -3,11 +3,11 @@
 
 class ProductsDatabase
 {
-    private $pdo;
+    protected $pdo;
 
 
-    public function __construct(){
-       $this->pdo = new PDO("mysql: host=localhost; dbname=fh_beb_ueb4; charset=utf8", "root", "", [ PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);
+    public function __construct($dbHost, $dbName, $dbUser,$dpPass){
+       $this->pdo = new PDO("mysql:host=".$dbHost.";dbname=".$dbName.";charset=utf8", $dbUser, $dpPass, [ PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);
     }
 
     public function executeProductsDBQuery($sqlStatement, $args = []){
