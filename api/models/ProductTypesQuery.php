@@ -24,7 +24,7 @@ class ProductTypesQuery
         $productNames = array();
 
         for($x = 0; $x<count($result); $x++) {
-            $a = ["productType" => $result[$x]['name'], "url" => "http://localhost:63343/web_shop_rest/api/index.php?action=listProductsByTypeId&typeId=" . $result[$x]['id'] . ""];
+            $a = ["productType" => $result[$x]['name'], "url" => "http://localhost/web_shop_rest/api/index.php?action=listProductsByTypeId&typeId=" . $result[$x]['id'] . ""];
             array_push($productNames, $a);
         }
         return $productNames;

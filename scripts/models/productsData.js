@@ -16,7 +16,7 @@ class ProductsData{
 
     }
 
-    renderProductTypesView(url="http://localhost:63343/web_shop_rest/api/index.php?action=listtypes"){
+    renderProductTypesView(url="http://localhost/web_shop_rest/api/index.php?action=listtypes"){
 
         $.ajax({
             url:url,
@@ -43,7 +43,7 @@ class ProductsData{
 
     addToCartAndRenderModal($selectedID, $addedProduct) {
         let self = this;
-        let url = "http://localhost:63343/web_shop_rest/api/index.php?action=addArticle&articleId="+$selectedID;
+        let url = "http://localhost/web_shop_rest/api/index.php?action=addArticle&articleId="+$selectedID;
         $.ajax({
             url: url,
             method: "GET"
@@ -58,13 +58,12 @@ class ProductsData{
 
     renderCartView() {
 
-        let url = "http://localhost:63343/web_shop_rest/api/index.php?action=listCart"
+        let url = "http://localhost/web_shop_rest/api/index.php?action=listCart"
         $.ajax({
             url: url,
             method: "GET",
         }).done(function(data){
             cartView.createView(data);
-            console.log(data);
         }).fail(function(error, text){
             console.log(error, text);
         });
@@ -74,7 +73,7 @@ class ProductsData{
     addItemToCart($itemID) {
         let self = this;
         $.ajax({
-            url: `http://localhost:63343/web_shop_rest/api/index.php?action=addArticle&articleId=${$itemID}`,
+            url: `http://localhost/web_shop_rest/api/index.php?action=addArticle&articleId=${$itemID}`,
             method: "GET"
         }).fail(function(error, text){
             console.log(error, text);
@@ -84,7 +83,7 @@ class ProductsData{
     removeItemFromCart($itemID) {
         let self = this;
         $.ajax({
-            url: `http://localhost:63343/web_shop_rest/api/index.php?action=removeArticle&articleId=${$itemID}`,
+            url: `http://localhost/web_shop_rest/api/index.php?action=removeArticle&articleId=${$itemID}`,
             method: "GET"
         }).fail(function(error, text){
             console.log(error, text);

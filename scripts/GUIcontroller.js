@@ -2,7 +2,7 @@
 * productsData contains several methods to fetch data with ajax calls from API
 * productData class aggregates several 'View' objects which can render separate views (product types, products and cart view) once data is fetched
 * every ajax call's done() methods invokes createView() method on one of the view objects injected in the class
-* thus controller just steers handler events
+* controller just steers handler events
 */
 import productsData from "./models/productsData.js";
 
@@ -13,17 +13,17 @@ class GUIcontroller{
     }
 
     initGUI(){
-        //since i build products catalogue view and cart view on different pages, this logic is designed to decide what view is to render upon loading of a respective page
-
 
         $('body').on('click', '.shopping-view-link', (e)=>{
             productsData.renderProductTypesView();
             $('.shoppingView-container').removeClass('d-none');
+            $('.welcome').addClass('d-none');
             $('.cart-view-container').addClass('d-none');
         });
 
         $('body').on('click', '.cart-view-link', (e)=>{
             productsData.renderCartView();
+            $('.welcome').addClass('d-none');
             $('.cart-view-container').removeClass('d-none');
             $('.shoppingView-container').addClass('d-none');
         });

@@ -5,8 +5,6 @@
 class Session
 {
 
-    private $cart;
-
     public function __construct(){
         session_name("productCart");
 
@@ -15,7 +13,6 @@ class Session
     public function init(){
         session_start();
         if(isset($_SESSION["articleId"])){
-            return;
         } else {
             $_SESSION["articleId"] = array();
         }

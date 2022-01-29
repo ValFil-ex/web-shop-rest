@@ -27,10 +27,10 @@ class ProductsByIDQuery
     private function formatQueryData($result){
         $productData = array();
 
-        $backUrl = "http://localhost:63343/web_shop_rest/api/index.php?action=listtypes";
+        $backUrl = "http://localhost/web_shop_rest/api/index.php?action=listtypes";
         foreach($result as $row){
             $row["url"] = $backUrl;
-            array_push($productData,  $row); //simply $row['url'] = $backUrl did not work on my side
+            array_push($productData,  $row);
 
         }
         return $productData;
