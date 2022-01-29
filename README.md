@@ -1,18 +1,27 @@
 
-# Web-Shop Page #
+# Web-Shop Page
 
-##Basic web-shop page created using principles of RESTful APIs
+##A single-page web-shop application demo developed using AMP stack with backend implemented as a RESTful Service. 
+
+##Product types, products and cart are dynamically fetched from backend 
+
+###Functionality:
+- display available product categories
+- display products for each selected category 
+- add product to cart 
+- display cart
+- increase/ decrease number of items in a cart
 
 ###Frontend: 
 - JS/JQuery, HTML, CSS, Bootstrap
-- I tried to structure code using MVC and OOP principles
--  http requests (ajax calls) to retrieve actual data from backend 
+- Modular code with MVC pattern 
+- Consumes backend services (actual products and cart data) via http requests (ajax calls)  
 
 ###Backend:
-- php, mysql
-- code structured using mvc pattern 
-- requests from frontend are routed in controller to make queries in DB and respond with JSON output 
-- Session satate is used to preserve data between http requests while user browsers the app  
+- php, mysql, apache
+- response data structure : JSON
+- code structured using MVC pattern
+- Session to persist client data  
 
 ###DEMO deployed at [Web-Shop-App](https://webstorebackend.000webhostapp.com/#) 
 
